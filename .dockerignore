@@ -1,0 +1,51 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# Build outputs
+build
+target
+out
+
+# Gradle
+.gradle
+
+# Logs
+*.log
+logs
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp
+temp
+
+# Node (si tu utilises frontend assets)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Tests reports
+reports
+
+# Docker
+docker-compose*.yml
+Dockerfile*
+
+# Environment files
+.env
+.env.*
+
+# Grails specific
+run
+stacktrace.log
+
+# Documentation
+README.md

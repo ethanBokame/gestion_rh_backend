@@ -1,0 +1,75 @@
+info:
+  app:
+    name: '@info.app.name@'
+    version: '@info.app.version@'
+    grailsVersion: '@info.app.grailsVersion@'
+
+grails:
+  mime:
+    types:
+      json:
+      - application/json
+      - text/json
+      hal:
+      - application/hal+json
+      - application/hal+xml
+      xml:
+      - text/xml
+      - application/xml
+      atom: application/atom+xml
+      css: text/css
+      csv: text/csv
+      js: text/javascript
+      rss: application/rss+xml
+      text: text/plain
+      all: '*/*'
+  cors:
+    enabled: true
+    allowedOrigins:
+      - http://localhost:4200
+  plugin:
+    springsecurity:
+      excludeSpringSecurityAutoConfiguration: true
+      rest:
+        token:
+          storage:
+            jwt:
+              secret: 'monSecretSuperLongEtVraimentSecurise123!'
+        login:
+          usernamePropertyName: 'email'
+      userLookup:
+        usernamePropertyName: 'email'
+      filterChain:
+        chainMap:
+          - pattern: '/**'
+            filters: 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter'
+  codegen:
+    defaultPackage: com.gestionrh
+  profile: rest-api
+
+dataSource:
+  driverClassName: org.mariadb.jdbc.Driver
+  username: root
+  password: root
+  pooled: true
+  jmxExport: true
+
+environments:
+  development:
+    dataSource:
+      dbCreate: update
+      url: jdbc:mariadb://localhost:3306/gestionrh
+  test:
+    dataSource:
+      dbCreate: update
+      url: jdbc:mariadb://localhost:3306/gestionrh
+  production:
+    dataSource:
+      dbCreate: update
+      url: jdbc:mariadb://localhost:3306/gestionrh
+
+hibernate:
+  cache:
+    queries: false
+    use_second_level_cache: false
+    use_query_cache: false
