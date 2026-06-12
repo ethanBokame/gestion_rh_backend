@@ -3,6 +3,9 @@ info:
     name: '@info.app.name@'
     version: '@info.app.version@'
     grailsVersion: '@info.app.grailsVersion@'
+    pagination:
+      itemsReturnedMin: 10
+      itemsReturnedMax: 100
 
 grails:
   mime:
