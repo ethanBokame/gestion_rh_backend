@@ -2,7 +2,7 @@ package com.gestionrh.validation
 
 import com.gestionrh.AbsenceRequest
 import com.gestionrh.User
-
+// Ce service contient uniquement des méthodes static aucune interaction avec la db donc crée une fonction utilitaire pour cela
 class AbsenceRequestValidator {
 
     static void checkCanUpdateAndDelete(AbsenceRequest absenceRequest, User authenticatedUser) {
